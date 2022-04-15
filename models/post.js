@@ -17,7 +17,13 @@ module.exports = (sequelize, DataTypes) => {
       content: DataTypes.STRING,
       img: DataTypes.STRING,
       trailId: DataTypes.INTEGER,
-      userId: DataTypes.INTEGER
+      userId: {
+        type: DataTypes.INTEGER,
+        onDelete: 'CASCADE',
+        references: {
+          model: ''
+        }
+      }
     },
     {
       sequelize,

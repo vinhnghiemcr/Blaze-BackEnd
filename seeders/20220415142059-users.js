@@ -7,7 +7,9 @@ module.exports = {
         email: 'blalala',
         passwordDigest: DataTypes.STRING,
         name: 'name',
-        trailName: 'trailName'
+        trailName: 'trailName',
+        createdAt: new Date(),
+        updatedAt: new Date()
       }
     ])
   },

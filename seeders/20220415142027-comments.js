@@ -6,7 +6,9 @@ module.exports = {
       {
         content: 'Comment to test',
         postId: DataTypes.INTEGER,
-        userId: DataTypes.INTEGER
+        userId: DataTypes.INTEGER,
+        createdAt: new Date(),
+        updatedAt: new Date()
       }
     ])
   },
