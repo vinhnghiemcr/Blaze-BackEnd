@@ -4,14 +4,7 @@ const middleware = require('../middleware')
 const GetTrailDetails = async (req, res) => {
   try {
     const trailId = parseInt(req.params.trailId)
-    const trail = await Trail.findByPk(trailId)
-    const posts = await Post.findAll({ where: { trailId: trailId } })
-
-    for await (const post of posts) {
-      const comments = await Comment.findAll({ where: { postId: post.id } })
-      post.comments = [...comments]
-    }
-    trail.posts = [...posts]
+    const trail = await Trail.findAll({include: {model: Post, as: 'posts' }, where: {id: trailId}})
     return res.status(200).json(trail)
   } catch (error) {
     throw error
@@ -35,19 +28,20 @@ const CreateTrail = async (req, res) => {
 }
 
 const UpdateTrail = async (req, res) => {
+  try {
+  console.log("hello from Update trail")
   const trailId = parseInt(req.params.trailId)
   const trail = await Trail.findByPk(trailId)
   const userId = parseInt(req.params.userId)
-  if (trail.userId === userId) {
-    try {
-      let updatedTrail = await Trail.update(req.body, {
+  if (trail.userId === userId) {    
+      let updatedTrail = await Trail.update({...req.body}, {
         where: { id: trailId },
         returning: true
       })
       return res.json(updatedTrail)
-    } catch (error) {
-      throw error
     }
+  } catch (error) {
+    throw error
   }
 }
 
