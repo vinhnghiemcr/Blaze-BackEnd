@@ -8,7 +8,9 @@ module.exports = {
         content: 'Blah Blah Blah',
         img: 'Image',
         trailId: DataTypes.INTEGER,
-        userId: DataTypes.INTEGER
+        userId: DataTypes.INTEGER,
+        createdAt: new Date(),
+        updatedAt: new Date()
       }
     ])
   },

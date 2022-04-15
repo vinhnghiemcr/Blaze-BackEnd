@@ -8,7 +8,9 @@ module.exports = {
         img: 'Image',
         description: 'Blah blah',
         longitude: 188181,
-        latitude: 17171
+        latitude: 17171,
+        createdAt: new Date(),
+        updatedAt: new Date()
       }
     ])
   },
