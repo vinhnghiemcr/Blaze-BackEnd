@@ -21,7 +21,24 @@ const GetPostsByUserId = async (req, res) => {
   }
 }
 
+const CreatePost = async (req, res) => {
+  try {
+    const trailId = parseInt(req.params.trailId)
+    const userId = parseInt(req.params.userId)
+    let postBody = {
+      trailId,
+      userId,
+      ...req.body
+    }
+    let post = await Post.create(postBody)
+    return res.status(201).json(post)
+  } catch (error) {
+    throw error
+  }
+}
+
 module.exports = {
   GetPostsByTrailId,
-  GetPostsByUserId
+  GetPostsByUserId,
+  CreatePost
 }
