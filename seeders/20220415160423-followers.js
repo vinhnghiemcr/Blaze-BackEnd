@@ -1,7 +1,5 @@
 'use strict'
 
-const user = require('../models/user')
-
 module.exports = {
   async up(queryInterface, Sequelize) {
     queryInterface.bulkInsert('userFollowers', [

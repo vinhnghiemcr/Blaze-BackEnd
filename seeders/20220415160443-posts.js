@@ -1,6 +1,4 @@
 'use strict'
-const { User } = require('../models')
-const { Trails } = require('../models')
 
 module.exports = {
   async up(queryInterface, Sequelize) {
