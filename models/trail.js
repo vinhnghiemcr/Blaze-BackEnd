@@ -1,20 +1,38 @@
 'use strict'
 const { Model } = require('sequelize')
 module.exports = (sequelize, DataTypes) => {
-  class Trails extends Model {
+  class Trail extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      Trail.belongsTo(models.State, { foreignKey: 'state_id' })
+      Trail.belongsTo(models.User, { foreignKey: 'user_id' })
+      Trail.hasMany(models.Post, { foreignKey: 'trail_id' })
     }
   }
-  Trails.init(
+  Trail.init(
     {
-      stateId: DataTypes.INTEGER,
-      userId: DataTypes.INTEGER,
+      stateId: {
+        type: DataTypes.INTEGER,
+        field: 'state_id',
+        onDelete: 'CASCADE',
+        references: {
+          model: 'states',
+          key: 'id'
+        }
+      },
+      userId: {
+        type: DataTypes.INTEGER,
+        field: 'user_id',
+        onDelete: 'CASCADE',
+        references: {
+          model: 'users',
+          key: 'id'
+        }
+      },
       name: DataTypes.STRING,
       img: DataTypes.STRING,
       location: DataTypes.STRING,
@@ -27,9 +45,9 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       sequelize,
-      modelName: 'Trails',
+      modelName: 'Trail',
       tableName: 'trails'
     }
   )
-  return Trails
+  return Trail
 }

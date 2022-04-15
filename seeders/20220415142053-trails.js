@@ -1,11 +1,14 @@
 'use strict'
 
+const state = require('../models/state')
+const user = require('../models/user')
+
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.bulkInsert('trails', [
       {
-        stateId: DataTypes.INTEGER,
-        userId: DataTypes.INTEGER,
+        stateId: state.id,
+        userId: user.id,
         name: 'Rocky Mountain national Park',
         img: 'Image',
         location: 'national park location',
