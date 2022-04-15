@@ -26,3 +26,8 @@ const CreateComment = async (req, res) => {
     throw error
   }
 }
+
+module.exports = {
+  GetCommentsByPostId,
+  CreateComment
+}
