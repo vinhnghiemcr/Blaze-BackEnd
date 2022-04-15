@@ -13,7 +13,8 @@ module.exports = (sequelize, DataTypes) => {
   }
   Trails.init(
     {
-      parkId: DataTypes.INTEGER,
+      stateId: DataTypes.INTEGER,
+      userId: DataTypes.INTEGER,
       name: DataTypes.STRING,
       img: DataTypes.STRING,
       location: DataTypes.STRING,
