@@ -38,27 +38,35 @@ const CreatePost = async (req, res) => {
 }
 
 const UpdatePost = async (req, res) => {
-  try {
-    const postId = parseInt(req.params.postId)
-    let updatedPost = await Post.update(req.body, {
-      where: { id: postId },
-      returning: true
-    })
-    return res.json(updatedPost)
-  } catch (error) {
-    throw error
+  const postId = parseInt(req.params.postId)
+  const post = await Post.findByPk(postId)
+  const userId = parseInt(req.params.userId)
+  if (post.userId === userId) {
+    try {
+      let updatedPost = await Post.update(req.body, {
+        where: { id: postId },
+        returning: true
+      })
+      return res.json(updatedPost)
+    } catch (error) {
+      throw error
+    }
   }
 }
 
 const DeletePost = async (req, res) => {
-  try {
-    const postId = parseInt(req.params.postId)
-    await Post.destroy({ where: { id: postId } })
-    res.send({
-      message: `Deleted post with an id of ${postId}`
-    })
-  } catch (error) {
-    throw error
+  const postId = parseInt(req.params.postId)
+  const post = await Post.findByPk(postId)
+  const userId = parseInt(req.params.userId)
+  if (post.userId === userId) {
+    try {
+      await Post.destroy({ where: { id: postId } })
+      res.send({
+        message: `Deleted post with an id of ${postId}`
+      })
+    } catch (error) {
+      throw error
+    }
   }
 }
 
