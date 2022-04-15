@@ -1,8 +1,5 @@
 'use strict'
 
-const state = require('../models/state')
-const user = require('../models/user')
-
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.bulkInsert('trails', [
