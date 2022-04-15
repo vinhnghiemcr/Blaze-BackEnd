@@ -2,24 +2,30 @@
 const { Model } = require('sequelize')
 module.exports = (sequelize, DataTypes) => {
   class UserFollower extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
-    static associate(models) {
-      // define association here
-    }
+    static associate(models) {}
   }
   UserFollower.init(
     {
-      userId: DataTypes.STRING,
-      followerId: DataTypes.STRING
+      userId: {
+        type: DataTypes.INTEGER,
+        onDelete: 'CASCADE',
+        references: {
+          model: 'users',
+          key: 'id'
+        }
+      },
+      followerId: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: 'users',
+          key: 'id'
+        }
+      }
     },
     {
       sequelize,
       modelName: 'UserFollower',
-      tableName: 'userFollower'
+      tableName: 'userFollowers'
     }
   )
   return UserFollower

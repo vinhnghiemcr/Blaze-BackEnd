@@ -1,4 +1,6 @@
 'use strict'
+const { User } = require('../models')
+const { Trails } = require('../models')
 
 module.exports = {
   async up(queryInterface, Sequelize) {
@@ -7,8 +9,8 @@ module.exports = {
         title: 'My Travel to a Park',
         content: 'Blah Blah Blah',
         img: 'Image',
-        trailId: DataTypes.INTEGER,
-        userId: DataTypes.INTEGER,
+        trailId: trail.id,
+        userId: user.id,
         createdAt: new Date(),
         updatedAt: new Date()
       }

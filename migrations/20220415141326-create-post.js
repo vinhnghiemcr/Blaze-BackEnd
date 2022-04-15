@@ -18,10 +18,22 @@ module.exports = {
         type: Sequelize.STRING
       },
       trailId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        field: 'trail_id',
+        onDelete: 'CASCADE',
+        references: {
+          model: 'trails',
+          key: 'id'
+        }
       },
       userId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        field: 'user_id',
+        onDelete: 'CASCADE',
+        references: {
+          model: 'users',
+          key: 'id'
+        }
       },
       createdAt: {
         allowNull: false,
