@@ -1,5 +1,4 @@
 const { State } = require('../models')
-const middleware = require('../middleware')
 
 const GetAllStates = async (req, res) => {
   try {
