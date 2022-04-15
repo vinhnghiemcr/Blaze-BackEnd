@@ -14,5 +14,8 @@ app.use(express.json())
 app.get('/', (req, res) => res.send('I am root'))
 app.use('/user', UserRouter)
 app.use('/trail', TrailRouter)
+app.use('/state', StateRouter)
+app.use('/comment', CommentRouter)
+app.use('/post', PostRouter)
 
 app.listen(PORT, () => console.log(`Server Running On Port: ${PORT}`))
