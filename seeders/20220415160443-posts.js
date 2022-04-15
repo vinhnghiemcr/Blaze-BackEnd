@@ -4,13 +4,13 @@ const { Trails } = require('../models')
 
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.bulkInsert([
+    await queryInterface.bulkInsert('posts', [
       {
         title: 'My Travel to a Park',
         content: 'Blah Blah Blah',
         img: 'Image',
-        trailId: trail.id,
-        userId: user.id,
+        trailId: 3,
+        userId: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       }
