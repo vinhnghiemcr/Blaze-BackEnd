@@ -2,6 +2,7 @@ const { State, Trail } = require('../models')
 
 const GetAllStates = async (req, res) => {
   try {
+    console.log('HELLO FROM GET ALL STATES')
     const states = await State.findAll()
     return res.status(200).json(states)
   } catch (error) {

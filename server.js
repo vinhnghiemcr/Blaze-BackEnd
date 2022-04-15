@@ -1,13 +1,9 @@
 const express = require('express')
+const app = express()
 const cors = require('cors')
 const logger = require('morgan')
-const UserRouter = require('./routes/UserRouter')
-const TrailRouter = require('./routes/TrailRouter')
-const StateRouter = require('./routes/StateRouter')
-const PostRouter = require('./routes/PostRouter')
-const CommentRouter = require('./routes/CommentRouter')
 
-const app = express()
+const AppRouter = require('./routes/AppRouter')
 
 const PORT = process.env.PORT || 3001
 
@@ -16,10 +12,5 @@ app.use(logger('dev'))
 app.use(express.json())
 
 app.get('/', (req, res) => res.send('I am root'))
-app.use('/user', UserRouter)
-app.use('/trail', TrailRouter)
-app.use('/state', StateRouter)
-app.use('/comment', CommentRouter)
-app.use('/post', PostRouter)
-
+app.use('/api', AppRouter)
 app.listen(PORT, () => console.log(`Server Running On Port: ${PORT}`))
