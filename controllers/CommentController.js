@@ -10,3 +10,19 @@ const GetCommentsByPostId = async (req, res) => {
     throw error
   }
 }
+
+const CreateComment = async (req, res) => {
+  try {
+    let postId = parseInt(req.params.postId)
+    let userId = parseInt(req.params.userId)
+    let commentBody = {
+      postId,
+      userId,
+      ...req.body
+    }
+    let comment = await Comment.create(commentBody)
+    return res.status(201).json(comment)
+  } catch (error) {
+    throw error
+  }
+}
