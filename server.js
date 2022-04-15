@@ -16,5 +16,6 @@ app.use('/user', UserRouter)
 app.use('/trail', TrailRouter)
 app.use('/state', StateRouter)
 app.use('/comment', CommentRouter)
+app.use('/post', PostRouter)
 
 app.listen(PORT, () => console.log(`Server Running On Port: ${PORT}`))
