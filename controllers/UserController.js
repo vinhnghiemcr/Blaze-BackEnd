@@ -30,7 +30,7 @@ const Register = async (req, res) => {
   try {
     const { email, password, trailName, name } = req.body
     let passwordDigest = await middleware.hashPassword(password)
-    const user = await User.create({ email, passwordDigest, name, trailName  })
+    const user = await User.create({ email, passwordDigest, name, trailName })
     res.send(user)
   } catch (error) {
     throw error
@@ -45,7 +45,7 @@ const UpdatePassword = async (req, res) => {
       user &&
       (await middleware.comparePassword(
         oldPassword,
-        user.dataValues.passwordDigest        
+        user.dataValues.passwordDigest
       ))
     ) {
       let passwordDigest = await middleware.hashPassword(newPassword)
@@ -57,24 +57,23 @@ const UpdatePassword = async (req, res) => {
 }
 
 const DeleteUser = async (req, res) => {
-    try {
-      const { password } = req.body
-      const userId = req.params.userId
-      const user = await User.findByPk(userId)
-      if (
-        user &&
-        (await middleware.comparePassword(
-          password,
-          user.dataValues.passwordDigest        
-        ))
-      ) {
-        
-        await User.destroy({shere: { id: userId}})
-        return res.send({ status: 'Ok', payload: user })
-      }
-      res.status(401).send({ status: 'Error', msg: 'Unauthorized' })
-    } catch (error) {}
-  }
+  try {
+    const { password } = req.body
+    const userId = req.params.userId
+    const user = await User.findByPk(userId)
+    if (
+      user &&
+      (await middleware.comparePassword(
+        password,
+        user.dataValues.passwordDigest
+      ))
+    ) {
+      await User.destroy({ shere: { id: userId } })
+      return res.send({ status: 'Ok', payload: user })
+    }
+    res.status(401).send({ status: 'Error', msg: 'Unauthorized' })
+  } catch (error) {}
+}
 
 const CheckSession = async (req, res) => {
   const { payload } = res.locals
@@ -85,5 +84,6 @@ module.exports = {
   Login,
   Register,
   UpdatePassword,
-  CheckSession
+  CheckSession,
+  DeleteUser
 }
