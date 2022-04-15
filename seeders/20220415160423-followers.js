@@ -4,38 +4,38 @@ module.exports = {
   async up(queryInterface, Sequelize) {
     queryInterface.bulkInsert('userFollowers', [
       {
-        userId: 1,
-        followerId: 2,
+        user_id: 1,
+        follower_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        userId: 1,
-        followerId: 3,
+        user_id: 1,
+        follower_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        userId: 2,
-        followerId: 1,
+        user_id: 2,
+        follower_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        userId: 2,
-        followerId: 3,
+        user_id: 2,
+        follower_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        userId: 3,
-        followerId: 1,
+        user_id: 3,
+        follower_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        userId: 3,
-        followerId: 2,
+        user_id: 3,
+        follower_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       }

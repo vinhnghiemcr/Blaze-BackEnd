@@ -5,72 +5,72 @@ module.exports = {
     await queryInterface.bulkInsert('comments', [
       {
         content: 'Comment to test',
-        postId: 1,
-        userId: 1,
+        post_id: 1,
+        user_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         content: 'Comment to test',
-        postId: 2,
-        userId: 3,
+        post_id: 2,
+        user_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         content: 'Comment to test',
-        postId: 3,
-        userId: 1,
+        post_id: 3,
+        user_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         content: 'Comment to test',
-        postId: 4,
-        userId: 2,
+        post_id: 4,
+        user_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       ,
       {
         content: 'Comment to test',
-        postId: 5,
-        userId: 3,
+        post_id: 5,
+        user_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         content: 'Comment to test',
-        postId: 6,
-        userId: 1,
+        post_id: 6,
+        user_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         content: 'Comment to test',
-        postId: 7,
-        userId: 2,
+        post_id: 7,
+        user_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         content: 'Comment to test',
-        postId: 8,
-        userId: 2,
+        post_id: 8,
+        user_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         content: 'Comment to test',
-        postId: 9,
-        userId: 1,
+        post_id: 9,
+        user_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         content: 'Comment to test',
-        postId: 3,
-        userId: 3,
+        post_id: 3,
+        user_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       }

@@ -7,8 +7,8 @@ module.exports = {
         title: 'My Travel to a Park',
         content: 'Blah Blah Blah',
         img: 'https://media.beam.usnews.com/22/f2/4609fa4747298709af9f1269bbd6/150710-hiking-stock.jpg',
-        trailId: 1,
-        userId: 1,
+        trail_id: 1,
+        user_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -16,8 +16,8 @@ module.exports = {
         title: 'My Travel to a Park today',
         content: 'Blah Blah',
         img: 'https://appalachiantrail.org/wp-content/uploads/2020/01/ATC_RP14251_DSC_5582-lpr.jpg',
-        trailId: 1,
-        userId: 2,
+        trail_id: 1,
+        user_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -25,8 +25,8 @@ module.exports = {
         title: 'Adventure',
         content: 'Blah Blah Blah Blah',
         img: 'https://explore-share.imgix.net/wp-content/uploads/2018/02/hiking_romania.jpg',
-        trailId: 2,
-        userId: 2,
+        trail_id: 2,
+        user_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -34,8 +34,8 @@ module.exports = {
         title: 'My Travel to a Park',
         content: 'Blah Blah Blah',
         img: 'https://media.beam.usnews.com/22/f2/4609fa4747298709af9f1269bbd6/150710-hiking-stock.jpg',
-        trailId: 2,
-        userId: 1,
+        trail_id: 2,
+        user_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -43,8 +43,8 @@ module.exports = {
         title: 'My Travel to a Park today',
         content: 'Blah Blah',
         img: 'https://appalachiantrail.org/wp-content/uploads/2020/01/ATC_RP14251_DSC_5582-lpr.jpg',
-        trailId: 3,
-        userId: 3,
+        trail_id: 3,
+        user_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -52,8 +52,8 @@ module.exports = {
         title: 'Adventure',
         content: 'Blah Blah Blah Blah',
         img: 'https://explore-share.imgix.net/wp-content/uploads/2018/02/hiking_romania.jpg',
-        trailId: 3,
-        userId: 2,
+        trail_id: 3,
+        user_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -61,8 +61,8 @@ module.exports = {
         title: 'My Travel to a Park',
         content: 'Blah Blah Blah',
         img: 'https://media.beam.usnews.com/22/f2/4609fa4747298709af9f1269bbd6/150710-hiking-stock.jpg',
-        trailId: 4,
-        userId: 1,
+        trail_id: 4,
+        user_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -70,8 +70,8 @@ module.exports = {
         title: 'My Travel to a Park today',
         content: 'Blah Blah',
         img: 'https://appalachiantrail.org/wp-content/uploads/2020/01/ATC_RP14251_DSC_5582-lpr.jpg',
-        trailId: 4,
-        userId: 3,
+        trail_id: 4,
+        user_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       }
