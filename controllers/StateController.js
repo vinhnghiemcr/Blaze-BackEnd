@@ -1,4 +1,4 @@
-const { State } = require('../models')
+const { State, Trail } = require('../models')
 
 const GetAllStates = async (req, res) => {
   try {
