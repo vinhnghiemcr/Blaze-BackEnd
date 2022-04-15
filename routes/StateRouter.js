@@ -3,3 +3,4 @@ const controller = require('../controllers/StateController')
 
 router.get('/', controller.GetAllStates)
 router.get('/:stateId', controller.GetStateDetails)
+module.exports = router

@@ -2,6 +2,10 @@ const express = require('express')
 const cors = require('cors')
 const logger = require('morgan')
 const UserRouter = require('./routes/UserRouter')
+const TrailRouter = require('./routes/TrailRouter')
+const StateRouter = require('./routes/StateRouter')
+const PostRouter = require('./routes/PostRouter')
+const CommentRouter = require('./routes/CommentRouter')
 
 const app = express()
 

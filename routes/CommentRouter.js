@@ -9,3 +9,4 @@ router.post(
   middleware.verifyToken,
   controller.CreateComment
 )
+module.exports = router

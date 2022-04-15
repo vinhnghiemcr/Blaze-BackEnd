@@ -22,3 +22,4 @@ router.delete(
   middleware.verifyToken,
   controler.DeleteUser
 )
+module.exports = router
