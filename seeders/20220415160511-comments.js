@@ -31,7 +31,6 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
-      ,
       {
         content: 'Comment to test',
         post_id: 5,
