@@ -50,9 +50,22 @@ const UpdatePost = async (req, res) => {
   }
 }
 
+const DeletePost = async (req, res) => {
+  try {
+    const postId = parseInt(req.params.postId)
+    await Post.destroy({ where: { id: postId } })
+    res.send({
+      message: `Deleted post with an id of ${postId}`
+    })
+  } catch (error) {
+    throw error
+  }
+}
+
 module.exports = {
   GetPostsByTrailId,
   GetPostsByUserId,
   CreatePost,
-  UpdatePost
+  UpdatePost,
+  DeletePost
 }
