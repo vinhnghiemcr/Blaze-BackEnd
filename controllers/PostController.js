@@ -37,8 +37,22 @@ const CreatePost = async (req, res) => {
   }
 }
 
+const UpdatePost = async (req, res) => {
+  try {
+    const postId = parseInt(req.params.postId)
+    let updatedPost = await Post.update(req.body, {
+      where: { id: postId },
+      returning: true
+    })
+    return res.json(updatedPost)
+  } catch (error) {
+    throw error
+  }
+}
+
 module.exports = {
   GetPostsByTrailId,
   GetPostsByUserId,
-  CreatePost
+  CreatePost,
+  UpdatePost
 }
