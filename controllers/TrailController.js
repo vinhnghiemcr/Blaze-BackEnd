@@ -51,8 +51,25 @@ const UpdateTrail = async (req, res) => {
   }
 }
 
+const DeleteTrail = async (req, res) => {
+  const trailId = parseInt(req.params.trailId)
+  const trail = await Trail.findByPk(trailId)
+  const userId = parseInt(req.params.userId)
+  if (trail.userId === userId) {
+    try {
+      await Trail.destroy({ where: { id: trailId } })
+      res.send({
+        message: `Deleted hiking trail with an id of ${trailId}`
+      })
+    } catch (error) {
+      throw error
+    }
+  }
+}
+
 module.exports = {
   GetTrailDetails,
   CreateTrail,
-  UpdateTrail
+  UpdateTrail,
+  DeleteTrail
 }
