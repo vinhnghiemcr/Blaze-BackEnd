@@ -55,18 +55,20 @@ const UpdatePost = async (req, res) => {
 }
 
 const DeletePost = async (req, res) => {
-  const postId = parseInt(req.params.postId)
-  const post = await Post.findByPk(postId)
-  const userId = parseInt(req.params.userId)
-  if (post.userId === userId) {
-    try {
+  try {
+    const postId = parseInt(req.params.postId)
+    const post = await Post.findByPk(postId)
+    const userId = parseInt(req.params.userId)
+    if (post.userId === userId) {
       await Post.destroy({ where: { id: postId } })
-      res.send({
+      return res.send({
         message: `Deleted post with an id of ${postId}`
       })
-    } catch (error) {
-      throw error
+    } else {
+      return res.status(401).send({ message: 'Unauthorized' })
     }
+  } catch (error) {
+    throw error
   }
 }
 
