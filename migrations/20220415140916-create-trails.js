@@ -20,6 +20,12 @@ module.exports = {
       location: {
         type: Sequelize.STRING
       },
+      longitude: {
+        type: Sequelize.INTEGER
+      },
+      latitude: {
+        type: Sequelize.INTEGER
+      },
       difficulty: {
         type: Sequelize.STRING
       },
