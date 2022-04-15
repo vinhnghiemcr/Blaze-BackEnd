@@ -34,7 +34,25 @@ const CreateTrail = async (req, res) => {
   }
 }
 
+const UpdateTrail = async (req, res) => {
+  const trailId = parseInt(req.params.trailId)
+  const trail = await Trail.findByPk(trailId)
+  const userId = parseInt(req.params.userId)
+  if (trail.userId === userId) {
+    try {
+      let updatedTrail = await Trail.update(req.body, {
+        where: { id: trailId },
+        returning: true
+      })
+      return res.json(updatedTrail)
+    } catch (error) {
+      throw error
+    }
+  }
+}
+
 module.exports = {
   GetTrailDetails,
-  CreateTrail
+  CreateTrail,
+  UpdateTrail
 }
