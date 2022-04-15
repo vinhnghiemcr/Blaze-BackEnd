@@ -3,7 +3,12 @@ const controller = require('../controllers/PostController')
 const middleware = require('../middleware')
 
 router.get('/trail/:trailId', controller.GetPostsByTrailId)
-router.get('/user/:userId', controller.GetPostsByUserId)
+router.get(
+  '/user/:userId',
+  middleware.stripToken,
+  middleware.verifyToken,
+  controller.GetPostsByUserId
+)
 router.post(
   '/trail/:trailId/user/:userId',
   middleware.stripToken,

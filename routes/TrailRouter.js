@@ -3,7 +3,12 @@ const controller = require('../controllers/TrailController')
 const middleware = require('../middleware')
 
 router.get('/:trailId', controller.GetTrailDetails)
-router.post('/user/:userId/state/:stateId', controller.CreateTrail)
+router.post(
+  '/user/:userId/state/:stateId',
+  middleware.stripToken,
+  middleware.verifyToken,
+  controller.CreateTrail
+)
 router.put(
   '/:trailId/user/:userId',
   middleware.stripToken,
