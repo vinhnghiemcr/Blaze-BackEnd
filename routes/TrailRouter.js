@@ -16,3 +16,4 @@ router.delete(
   middleware.verifyToken,
   controller.DeleteTrail
 )
+module.exports = router

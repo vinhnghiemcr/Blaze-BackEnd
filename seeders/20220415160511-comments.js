@@ -61,7 +61,7 @@ module.exports = {
       },
       {
         content: 'Comment to test',
-        post_id: 9,
+        post_id: 8,
         user_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
