@@ -1,3 +1,4 @@
+
 const { State, Trail } = require('../models')
 
 const GetAllStates = async (req, res) => {
@@ -13,9 +14,8 @@ const GetAllStates = async (req, res) => {
 const GetStateDetails = async (req, res) => {
   try {
     const stateId = parseInt(req.params.stateId)
-    const state = await State.findByPk(stateId)
-    const trails = await Trail.findAll({ where: { stateId: stateId } })
-    state.trails = [...trails]
+    const state = await State.findAll({include: {model: Trail, as: 'trails' }, where: {id: stateId}})
+    console.log(state, "STATE")
     return res.status(200).json(state)
   } catch (error) {
     throw error
