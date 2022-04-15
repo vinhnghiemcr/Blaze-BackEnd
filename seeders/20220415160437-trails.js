@@ -4,8 +4,8 @@ module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.bulkInsert('trails', [
       {
-        stateId: 1,
-        userId: 1,
+        state_id: 1,
+        user_id: 1,
         name: 'Rocky Mountain national Park',
         img: 'Image',
         location: 'national park location',
@@ -17,8 +17,8 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        stateId: 1,
-        userId: 2,
+        state_id: 1,
+        user_id: 2,
         name: 'national Park',
         img: 'Image',
         location: 'national park location',
@@ -30,8 +30,8 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        stateId: 2,
-        userId: 3,
+        state_id: 2,
+        user_id: 3,
         name: 'Park',
         img: 'Image',
         location: 'national park location',
@@ -43,8 +43,8 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        stateId: 2,
-        userId: 2,
+        state_id: 2,
+        user_id: 2,
         name: 'Park to go on trail',
         img: 'Image',
         location: 'national park location',
