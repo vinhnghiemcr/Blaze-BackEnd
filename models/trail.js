@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       Trail.belongsTo(models.State, { foreignKey: 'state_id' })
       Trail.belongsTo(models.User, { foreignKey: 'user_id' })
-      Trail.hasMany(models.Post, { foreignKey: 'trail_id' })
+      Trail.hasMany(models.Post, { foreignKey: 'trail_id', as: 'posts' })
     }
   }
   Trail.init(
