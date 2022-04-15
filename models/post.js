@@ -2,13 +2,10 @@
 const { Model } = require('sequelize')
 module.exports = (sequelize, DataTypes) => {
   class Post extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
     static associate(models) {
-      // define association here
+      Post.belongsTo(models.Trail, { foreignKey: 'trail_id' })
+      Post.belongsTo(models.User, { foreignKey: 'user_id' })
+      Post.hasMany(models.Comment, { foreignKey: 'post_id' })
     }
   }
   Post.init(
@@ -16,8 +13,24 @@ module.exports = (sequelize, DataTypes) => {
       title: DataTypes.STRING,
       content: DataTypes.STRING,
       img: DataTypes.STRING,
-      trailId: DataTypes.INTEGER,
-      userId: DataTypes.INTEGER
+      trailId: {
+        type: DataTypes.INTEGER,
+        field: 'trail_id',
+        onDelete: 'CASCADE',
+        references: {
+          model: 'trails',
+          key: 'id'
+        }
+      },
+      userId: {
+        type: DataTypes.INTEGER,
+        field: 'user_id',
+        onDelete: 'CASCADE',
+        references: {
+          model: 'users',
+          key: 'id'
+        }
+      }
     },
     {
       sequelize,
