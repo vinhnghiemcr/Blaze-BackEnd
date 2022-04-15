@@ -11,7 +11,8 @@ app.use(cors())
 app.use(logger('dev'))
 app.use(express.json())
 
-app.get('/',  (req,res) => res.send('I am root'))
+app.get('/', (req, res) => res.send('I am root'))
 app.use('/user', UserRouter)
+app.use('/trail', TrailRouter)
 
 app.listen(PORT, () => console.log(`Server Running On Port: ${PORT}`))
