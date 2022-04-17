@@ -10,7 +10,7 @@ router.get(
   controller.GetPostsByUserId
 )
 router.post(
-  '/trail/:trailId/user/:userId',
+  '/user/:userId',
   middleware.stripToken,
   middleware.verifyToken,
   controller.CreatePost
