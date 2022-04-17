@@ -23,16 +23,20 @@ const GetPostsByUserId = async (req, res) => {
 const CreatePost = async (req, res) => {
   try {
     const trail = await Trail.findOne({ where: { name: req.body.trailName } })
-    const userId = parseInt(req.params.userId)
-    let postBody = {
-      trailId: trail.id,
-      userId,
-      title: req.body.title,
-      content: req.body.content,
-      img: req.body.img
-    }
-    let post = await Post.create(postBody)
-    return res.status(201).json(post)
+    if (trail) {
+      const userId = parseInt(req.params.userId)
+      let postBody = {
+        trailId: trail.id,
+        userId,
+        title: req.body.title,
+        content: req.body.content,
+        img: req.body.img
+      }
+      let post = await Post.create(postBody)
+      return res.status(201).json(post)
+    } else{
+      return res.status(404).send({msg: "Trail can not be found!"})
+    }    
   } catch (error) {
     throw error
   }
