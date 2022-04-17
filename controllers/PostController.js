@@ -1,5 +1,4 @@
-const { Post } = require('../models')
-const middleware = require('../middleware')
+const { Post, Trail } = require('../models')
 
 const GetPostsByTrailId = async (req, res) => {
   try {
@@ -23,12 +22,14 @@ const GetPostsByUserId = async (req, res) => {
 
 const CreatePost = async (req, res) => {
   try {
-    const trailId = parseInt(req.params.trailId)
+    const trail = await Trail.findOne({ where: { name: req.body.trailName } })
     const userId = parseInt(req.params.userId)
     let postBody = {
-      trailId,
+      trailId: trail.id,
       userId,
-      ...req.body
+      title: req.body.title,
+      content: req.body.content,
+      img: req.body.img
     }
     let post = await Post.create(postBody)
     return res.status(201).json(post)
