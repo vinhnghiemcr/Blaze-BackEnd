@@ -453,8 +453,9 @@ module.exports = {
       },
       {
         name: 'Virginia',
-        img: 'https://www.mylongdistancemovers.com/wp-content/uploads/2022/03/Moving-To-Kansas-768x512.jpg',
-        description: 'Kansas',
+        img: 'https://www.wallpaperup.com/uploads/wallpapers/2016/06/24/991616/a0252112ad1cf74574a31d28eadf7bc9-700.jpg',
+        description:
+          'Virginia offers over 200 species of birds and wildlife including deer, black bear, bobcats, river otters and more. ',
         longitude: 188181,
         latitude: 17171,
         createdAt: new Date(),
@@ -462,8 +463,9 @@ module.exports = {
       },
       {
         name: 'Washington',
-        img: 'https://www.mylongdistancemovers.com/wp-content/uploads/2022/03/Moving-To-Kansas-768x512.jpg',
-        description: 'Kansas',
+        img: 'https://live.staticflickr.com/65535/50336473582_934cd883b9_b.jpg',
+        description:
+          'An Icon on the Horizon. Ascending to 14,410 feet above sea level, Mount Rainier stands as an icon in the Washington landscape.',
         longitude: 188181,
         latitude: 17171,
         createdAt: new Date(),
@@ -471,8 +473,9 @@ module.exports = {
       },
       {
         name: 'West Virginia',
-        img: 'https://www.mylongdistancemovers.com/wp-content/uploads/2022/03/Moving-To-Kansas-768x512.jpg',
-        description: 'Kansas',
+        img: 'https://wvtourism.com/wp-content/uploads/2018/08/BlackwaterCanyonFall-sjs-05.jpg',
+        description:
+          '7 natural wonders in the National Parks and beyond The hills and hollows of West Virginia hide an amazing number of natural wonders, from craggy peaks to subterranean caves.',
         longitude: 188181,
         latitude: 17171,
         createdAt: new Date(),
@@ -480,8 +483,9 @@ module.exports = {
       },
       {
         name: 'Wisconsin',
-        img: 'https://www.mylongdistancemovers.com/wp-content/uploads/2022/03/Moving-To-Kansas-768x512.jpg',
-        description: 'Kansas',
+        img: 'https://www.goodfreephotos.com/albums/united-states/wisconsin/madison/wisconsin-madison-the-nature-boardwalk.jpg',
+        description:
+          'From stunning sea caves to towering waterfalls, Wisconsin is home to some of the most breathtaking natural wonders this side of the Mississippi. ',
         longitude: 188181,
         latitude: 17171,
         createdAt: new Date(),
@@ -489,8 +493,9 @@ module.exports = {
       },
       {
         name: 'Wyoming',
-        img: 'https://www.mylongdistancemovers.com/wp-content/uploads/2022/03/Moving-To-Kansas-768x512.jpg',
-        description: 'Kansas',
+        img: 'https://natureconservancy-h.assetsadobe.com/is/image/content/dam/tnc/nature/en/photos/wind-river-mtnstnc_63580406_Full.jpg?crop=0,105,1800,990&wid=4000&hei=2200&scl=0.45',
+        description:
+          'Wyoming has an abundance of natural beauty so it’s no wonder that this spectacular state is home to seven incredible natural wonders.',
         longitude: 188181,
         latitude: 17171,
         createdAt: new Date(),
