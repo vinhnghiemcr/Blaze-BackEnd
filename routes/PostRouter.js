@@ -27,4 +27,9 @@ router.delete(
   middleware.verifyToken,
   controller.DeletePost
 )
+
+router.get(
+  '/following/:userId',
+  controller.GetFolloweingPosts
+)
 module.exports = router

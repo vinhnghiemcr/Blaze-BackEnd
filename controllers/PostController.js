@@ -1,4 +1,5 @@
-const { Post, Trail } = require('../models')
+const { Post, Trail, User } = require('../models')
+const { Op } = require('sequelize')
 
 const GetPostsByTrailId = async (req, res) => {
   try {
@@ -77,10 +78,30 @@ const DeletePost = async (req, res) => {
   }
 }
 
+const GetFolloweingPosts = async (req, res) => {
+  try {
+    const userId = parseInt(req.params.userId)
+    const user = await User.findOne({
+      include: [{ model: User, as: 'following', through: { attributes: [] }}],
+      where: {id: userId}})
+    const allFollowingId = user.following.map((u) => u.id)
+    const posts = await Post.findAll({
+      where: {
+        userId: [...allFollowingId]
+      },
+      order: [['createdAt', 'DESC']]
+    })
+    return res.status(200).json(posts)
+  } catch (error) {
+    throw error
+  }
+}
+
 module.exports = {
   GetPostsByTrailId,
   GetPostsByUserId,
   CreatePost,
   UpdatePost,
-  DeletePost
+  DeletePost,
+  GetFolloweingPosts
 }
