@@ -17,24 +17,21 @@ const GetTrailDetails = async (req, res) => {
 const CreateTrail = async (req, res) => {
   try {
     const state = await State.findOne({ where: { name: req.body.stateName } })
-    const userId = parseInt(req.params.userId)
-    const stateId = parseInt(req.params.stateId)
-    let body = req.body
-    delete body.stateName
-    let trailBody = {
-      stateId: state.id,
-      userId,
-      ...body
-      // name: req.body.name,
-      // img: req.body.img,
-      // location: req.body.location,
-      // difficulty: req.body.difficulty,
-      // length: parseFloat(req.body.length),
-      // elevationChange: req.body.elevationChange,
-      // routeType: req.body.routeType
+    if (state) {
+      const userId = parseInt(req.params.userId)
+      const stateId = parseInt(req.params.stateId)
+      let body = req.body
+      delete body.stateName
+      let trailBody = {
+        stateId: state.id,
+        userId,
+        ...body
+      }
+      let trail = await Trail.create(trailBody)
+      return res.status(201).json(trail)
+    } else {
+      return res.status(404).send({ message: 'State not found' })
     }
-    let trail = await Trail.create(trailBody)
-    return res.status(201).json(trail)
   } catch (error) {
     throw error
   }
