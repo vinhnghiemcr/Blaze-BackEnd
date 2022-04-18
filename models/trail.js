@@ -36,11 +36,11 @@ module.exports = (sequelize, DataTypes) => {
       name: DataTypes.STRING,
       img: DataTypes.STRING,
       location: DataTypes.STRING,
-      longitude: DataTypes.INTEGER,
-      latitude: DataTypes.INTEGER,
+      longitude: DataTypes.FLOAT,
+      latitude: DataTypes.FLOAT,
       difficulty: DataTypes.STRING,
       length: DataTypes.FLOAT,
-      elevationChange: DataTypes.INTEGER,
+      elevationChange: DataTypes.FLOAT,
       routeType: DataTypes.STRING
     },
     {
