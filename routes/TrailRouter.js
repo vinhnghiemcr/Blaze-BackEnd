@@ -4,7 +4,7 @@ const middleware = require('../middleware')
 
 router.get('/:trailId', controller.GetTrailDetails)
 router.post(
-  '/user/:userId/state/:stateId',
+  '/user/:userId',
   middleware.stripToken,
   middleware.verifyToken,
   controller.CreateTrail

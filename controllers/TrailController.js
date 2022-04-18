@@ -1,10 +1,13 @@
-const { Trail, Post, Comment } = require('../models')
+const { Trail, Post, Comment, State } = require('../models')
 const middleware = require('../middleware')
 
 const GetTrailDetails = async (req, res) => {
   try {
     const trailId = parseInt(req.params.trailId)
-    const trail = await Trail.findAll({include: {model: Post, as: 'posts' }, where: {id: trailId}})
+    const trail = await Trail.findAll({
+      include: { model: Post, as: 'posts' },
+      where: { id: trailId }
+    })
     return res.status(200).json(trail)
   } catch (error) {
     throw error
@@ -13,12 +16,22 @@ const GetTrailDetails = async (req, res) => {
 
 const CreateTrail = async (req, res) => {
   try {
+    const state = await State.findOne({ where: { name: req.body.stateName } })
     const userId = parseInt(req.params.userId)
     const stateId = parseInt(req.params.stateId)
+    let body = req.body
+    delete body.stateName
     let trailBody = {
+      stateId: state.id,
       userId,
-      stateId,
-      ...req.body
+      ...body
+      // name: req.body.name,
+      // img: req.body.img,
+      // location: req.body.location,
+      // difficulty: req.body.difficulty,
+      // length: parseFloat(req.body.length),
+      // elevationChange: req.body.elevationChange,
+      // routeType: req.body.routeType
     }
     let trail = await Trail.create(trailBody)
     return res.status(201).json(trail)
@@ -29,15 +42,18 @@ const CreateTrail = async (req, res) => {
 
 const UpdateTrail = async (req, res) => {
   try {
-  console.log("hello from Update trail")
-  const trailId = parseInt(req.params.trailId)
-  const trail = await Trail.findByPk(trailId)
-  const userId = parseInt(req.params.userId)
-  if (trail.userId === userId) {    
-      let updatedTrail = await Trail.update({...req.body}, {
-        where: { id: trailId },
-        returning: true
-      })
+    console.log('hello from Update trail')
+    const trailId = parseInt(req.params.trailId)
+    const trail = await Trail.findByPk(trailId)
+    const userId = parseInt(req.params.userId)
+    if (trail.userId === userId) {
+      let updatedTrail = await Trail.update(
+        { ...req.body },
+        {
+          where: { id: trailId },
+          returning: true
+        }
+      )
       return res.json(updatedTrail)
     }
   } catch (error) {
