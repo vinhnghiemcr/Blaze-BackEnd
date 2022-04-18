@@ -4,7 +4,10 @@ const { Op } = require('sequelize')
 const GetPostsByTrailId = async (req, res) => {
   try {
     const trailId = parseInt(req.params.trailId)
-    const posts = await Post.findAll({ where: { trailId: trailId }, order: [['createdAt', 'DESC']] })
+    const posts = await Post.findAll({
+      where: { trailId: trailId },
+      order: [['createdAt', 'DESC']]
+    })
     return res.status(200).json(posts)
   } catch (error) {
     throw error
@@ -14,7 +17,10 @@ const GetPostsByTrailId = async (req, res) => {
 const GetPostsByUserId = async (req, res) => {
   try {
     const userId = parseInt(req.params.userId)
-    const posts = await Post.findAll({ where: { userId: userId }, order: [['createdAt', 'DESC']] })
+    const posts = await Post.findAll({
+      where: { userId: userId },
+      order: [['createdAt', 'DESC']]
+    })
     return res.status(200).json(posts)
   } catch (error) {
     throw error
@@ -35,9 +41,9 @@ const CreatePost = async (req, res) => {
       }
       let post = await Post.create(postBody)
       return res.status(201).json(post)
-    } else{
-      return res.status(404).send({msg: "Trail can not be found!"})
-    }    
+    } else {
+      return res.status(404).send({ msg: 'Trail can not be found!' })
+    }
   } catch (error) {
     throw error
   }
@@ -82,8 +88,9 @@ const GetFolloweingPosts = async (req, res) => {
   try {
     const userId = parseInt(req.params.userId)
     const user = await User.findOne({
-      include: [{ model: User, as: 'following', through: { attributes: [] }}],
-      where: {id: userId}})
+      include: [{ model: User, as: 'following', through: { attributes: [] } }],
+      where: { id: userId }
+    })
     const allFollowingId = user.following.map((u) => u.id) //[2,3]
     const posts = await Post.findAll({
       where: {
