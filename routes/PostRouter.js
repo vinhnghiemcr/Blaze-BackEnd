@@ -30,6 +30,8 @@ router.delete(
 
 router.get(
   '/following/:userId',
+  middleware.stripToken,
+  middleware.verifyToken,
   controller.GetFolloweingPosts
 )
 module.exports = router
