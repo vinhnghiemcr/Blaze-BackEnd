@@ -64,7 +64,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        state_id: 1,
+        state_id: 6,
         user_id: 3,
         name: 'Upper Green Lake Trail',
         img: 'https://i.imgur.com/FCEqWOs.jpg',
@@ -79,7 +79,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        state_id: 1,
+        state_id: 6,
         user_id: 3,
         name: 'Stamping Mill',
         img: 'https://www.americansouthwest.net/colorado/photographs700/farwell-stamp-mill-independence.jpg',
