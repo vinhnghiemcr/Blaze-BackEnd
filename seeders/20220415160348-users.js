@@ -1,26 +1,32 @@
 'use strict'
-
+const middleware = require('../middleware')
 module.exports = {
   async up(queryInterface, Sequelize) {
+    const nghiem = await middleware.hashPassword('nghiem')
+    const jenna = await middleware.hashPassword('jenna')
+    const molly = await middleware.hashPassword('molly')
     await queryInterface.bulkInsert('users', [
       {
-        email: 'user1',
+        email: 'nghiem@nghiem.com',
         name: 'Nghiem',
         trailName: 'Monkey King',
+        passwordDigest: nghiem,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        email: 'user2',
+        email: 'jenna@jenna.com',
         name: 'Jenna',
         trailName: 'Squirrel',
+        passwordDigest: jenna,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        email: 'user3',
+        email: 'molly@molly.com',
         name: 'Molly',
         trailName: 'Tree',
+        passwordDigest: molly,
         createdAt: new Date(),
         updatedAt: new Date()
       }
