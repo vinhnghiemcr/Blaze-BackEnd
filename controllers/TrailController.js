@@ -42,15 +42,19 @@ const UpdateTrail = async (req, res) => {
     const trailId = parseInt(req.params.trailId)
     const userId = parseInt(req.params.userId)
     const trail = await Trail.findByPk(trailId)
+    console.log(trail, "TRAIL")
     if (trail.userId === userId) {
       let updatedTrail = await Trail.update(
         { ...req.body },
         {
           where: { id: trailId },
-          returning: true
+          returning: true,
+          plain: true,
+          raw: true
         }
       )
-      return res.json(updatedTrail)
+      console.log(updatedTrail, "updatedTrail")
+      return res.json(updatedTrail[1])
     }
   } catch (error) {
     throw error

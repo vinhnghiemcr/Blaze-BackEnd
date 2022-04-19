@@ -50,7 +50,7 @@ module.exports = {
       },
       {
         state_id: 1,
-        user_id: 2,
+        user_id: 1,
         name: 'Sougahoagdee Falls',
         img: 'https://alabamawaterfalls.com/wp-content/uploads/2018/04/Sougahoagdee-Falls2.jpg',
         location: 'Southern Grace Kennels',
