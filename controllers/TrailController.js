@@ -4,7 +4,7 @@ const middleware = require('../middleware')
 const GetTrailDetails = async (req, res) => {
   try {
     const trailId = parseInt(req.params.trailId)
-    const trail = await Trail.findAll({
+    const trail = await Trail.findOne({
       include: { model: Post, as: 'posts' },
       where: { id: trailId }
     })
@@ -39,10 +39,9 @@ const CreateTrail = async (req, res) => {
 
 const UpdateTrail = async (req, res) => {
   try {
-    console.log('hello from Update trail')
     const trailId = parseInt(req.params.trailId)
-    const trail = await Trail.findByPk(trailId)
     const userId = parseInt(req.params.userId)
+    const trail = await Trail.findByPk(trailId)
     if (trail.userId === userId) {
       let updatedTrail = await Trail.update(
         { ...req.body },
