@@ -92,6 +92,21 @@ module.exports = {
         routeType: 'Rugged',
         createdAt: new Date(),
         updatedAt: new Date()
+      },
+      {
+        state_id: 43,
+        user_id: 1,
+        name: 'The Window Trail',
+        img: 'https://cdn-assets.alltrails.com/uploads/photo/image/22432726/extra_large_cee78e5b0f891ff5f286a637dd6476e5.jpg',
+        location: 'Terlingua, Texas',
+        longitude: -97.722597,
+        latitude: 30.717176,
+        difficulty: 'Moderate',
+        length: 5.3,
+        elevationChange: +6970,
+        routeType: 'Rugged',
+        createdAt: new Date(),
+        updatedAt: new Date()
       }
     ])
   },

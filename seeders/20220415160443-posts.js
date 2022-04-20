@@ -14,7 +14,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        title: 'Visited the Wildflowers with Ned',
+        title: 'Visited the wildflowers with Ned',
         content:
           'Ned frolicked through wildflowers today as we got ready to make a big hike.',
         img: 'https://i.imgur.com/HcubU4T.jpeg',
@@ -51,7 +51,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        title: 'Green Ridge Adventure near Crestebutte',
+        title: 'Green Ridge adventure near crestebutte',
         content: 'Hiked the Ridge today around Green Lake. Beautiful views!',
         img: 'https://explore-share.imgix.net/wp-content/uploads/2018/02/hiking_romania.jpg',
         trail_id: 5,
@@ -60,7 +60,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        title: 'Waterfall on the Way to Green Ridge',
+        title: 'Waterfall on the way to green ridge',
         content:
           'You definitely need a four wheel vehicle to get here, but its worth the effort',
         img: 'https://i.imgur.com/6sjRNs1.jpeg',
@@ -70,7 +70,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        title: 'Forgot my Shoes but Scenerie was beautiful',
+        title: 'Forgot my shoes but scenerie was beautiful',
         content:
           'Green Ridge hosts some of the best campsites around, would have gone for a hike if I had remembered my boots',
         img: 'https://i.imgur.com/908yOqx.png',
@@ -86,6 +86,61 @@ module.exports = {
         img: 'https://i.imgur.com/TJ9hQvS.jpeg',
         trail_id: 6,
         user_id: 2,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        title: 'Catoctin Mountain Park',
+        content:
+          'Awesome site! Some of the best weather for hiking up this rugged trail',
+        img: 'https://i.imgur.com/Ak0uCH2.jpeg',
+        trail_id: 7,
+        user_id: 1,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        title: 'Pillbox Hike',
+        content: 'One of the best trails in Hawaii!',
+        img: 'https://i.imgur.com/RSKq3GN.png',
+        trail_id: 7,
+        user_id: 1,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        title: 'Stairs to Heaven',
+        content: 'Wonderful spot in Honolulu! Lots of stairs',
+        img: 'https://i.imgur.com/DNsUTly.png',
+        trail_id: 7,
+        user_id: 1,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        title: 'Koko Crater Railway Trailhead',
+        content: 'Very steep but fantasically historic!',
+        img: 'https://i.imgur.com/bHgdryj.png',
+        trail_id: 7,
+        user_id: 1,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        title: 'Koko Crater Railway Trailhead',
+        content: 'One of the best spots to get get photographs in Honolulu',
+        img: 'https://i.imgur.com/aFUnwL4.png',
+        trail_id: 7,
+        user_id: 1,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        title: 'Polallie Trailhead',
+        content: 'What a waterfall!',
+        img: 'https://i.imgur.com/aFUnwL4.png',
+        trail_id: 7,
+        user_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       }
