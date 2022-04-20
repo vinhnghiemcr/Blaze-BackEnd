@@ -35,7 +35,7 @@ module.exports = {
       {
         title: 'Mount Tammy!',
         content: 'Best Hike in New Jersey!',
-        img: 'http://lifeasanomad.com/wp-content/gallery/mount-tammany/P1000355.jpg',
+        img: 'https://i.imgur.com/e05Fu1O.jpeg',
         trail_id: 3,
         user_id: 2,
         createdAt: new Date(),
@@ -141,6 +141,15 @@ module.exports = {
         img: 'https://i.imgur.com/LNGr3yq.png',
         trail_id: 8,
         user_id: 1,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        title: 'BEAR ON TRAIL',
+        content: 'Watch out spotted a bear on the trail today!',
+        img: 'https://i.imgur.com/LNGr3yq.png',
+        trail_id: 6,
+        user_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       }
