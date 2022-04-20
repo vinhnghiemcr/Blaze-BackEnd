@@ -92,6 +92,36 @@ module.exports = {
         routeType: 'Rugged',
         createdAt: new Date(),
         updatedAt: new Date()
+      },
+      {
+        state_id: 43,
+        user_id: 1,
+        name: 'The Window Trail',
+        img: 'https://cdn-assets.alltrails.com/uploads/photo/image/22432726/extra_large_cee78e5b0f891ff5f286a637dd6476e5.jpg',
+        location: 'Terlingua, Texas',
+        longitude: -97.722597,
+        latitude: 30.717176,
+        difficulty: 'Moderate',
+        length: 5.3,
+        elevationChange: +6970,
+        routeType: 'Rugged',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        state_id: 43,
+        user_id: 1,
+        name: 'Honolulu Trails',
+        img: 'https://i.imgur.com/LNGr3yq.png',
+        location: 'Honolulu, Hawaii',
+        longitude: -157.858093,
+        latitude: 21.315603,
+        difficulty: 'Moderate',
+        length: 7.3,
+        elevationChange: +970,
+        routeType: 'Leafy Trail, paths may vary',
+        createdAt: new Date(),
+        updatedAt: new Date()
       }
     ])
   },
