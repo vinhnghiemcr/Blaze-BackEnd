@@ -103,7 +103,7 @@ module.exports = {
         title: 'Pillbox Hike',
         content: 'One of the best trails in Hawaii!',
         img: 'https://i.imgur.com/RSKq3GN.png',
-        trail_id: 7,
+        trail_id: 8,
         user_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -112,7 +112,7 @@ module.exports = {
         title: 'Stairs to Heaven',
         content: 'Wonderful spot in Honolulu! Lots of stairs',
         img: 'https://i.imgur.com/DNsUTly.png',
-        trail_id: 7,
+        trail_id: 8,
         user_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -130,7 +130,7 @@ module.exports = {
         title: 'Koko Crater Railway Trailhead',
         content: 'One of the best spots to get get photographs in Honolulu',
         img: 'https://i.imgur.com/aFUnwL4.png',
-        trail_id: 7,
+        trail_id: 8,
         user_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -138,8 +138,8 @@ module.exports = {
       {
         title: 'Polallie Trailhead',
         content: 'What a waterfall!',
-        img: 'https://i.imgur.com/aFUnwL4.png',
-        trail_id: 7,
+        img: 'https://i.imgur.com/LNGr3yq.png',
+        trail_id: 8,
         user_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
