@@ -109,7 +109,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        state_id: 43,
+        state_id: 11,
         user_id: 1,
         name: 'Honolulu Trails',
         img: 'https://i.imgur.com/LNGr3yq.png',
