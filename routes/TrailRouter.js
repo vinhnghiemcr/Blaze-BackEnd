@@ -2,6 +2,7 @@ const router = require('express').Router()
 const controller = require('../controllers/TrailController')
 const middleware = require('../middleware')
 
+router.get('/', controller.GetAllTrailNames)
 router.get('/:trailId', controller.GetTrailDetails)
 router.post(
   '/user/:userId',

@@ -1,6 +1,17 @@
 const { Trail, Post, Comment, State } = require('../models')
 const middleware = require('../middleware')
 
+
+const GetAllTrailNames = async (req, res) => {
+  try {
+    let trailNames = await Trail.findAll({attributes: ['name']})
+    trailNames = trailNames.map((trail) => trail.name)
+    res.json(trailNames)
+  } catch (error) {
+    throw error
+  }
+}
+
 const GetTrailDetails = async (req, res) => {
   try {
     const trailId = parseInt(req.params.trailId)
@@ -78,6 +89,7 @@ const DeleteTrail = async (req, res) => {
 }
 
 module.exports = {
+  GetAllTrailNames,
   GetTrailDetails,
   CreateTrail,
   UpdateTrail,
