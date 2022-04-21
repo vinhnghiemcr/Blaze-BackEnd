@@ -35,7 +35,7 @@ module.exports = {
       },
       {
         name: 'Arkansas',
-        img: 'http://assets.inarkansas.com/40644/twin-falls.jpg',
+        img: 'https://cdn.onlyinyourstate.com/wp-content/uploads/2017/11/11334214_766755350107418_7246428792343931427_o.jpg',
         description:
           "Whether you're looking for magnificent architecture, caverns, sites of literary interest, art galleries, or nature, there is plenty to fascinate you in the state",
         longitude: 188181,

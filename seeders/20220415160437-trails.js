@@ -169,7 +169,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        state_id: 11,
+        state_id: 37,
         user_id: 1,
         name: 'Oregon Trail',
         img: 'https://i.imgur.com/LNGr3yq.png',
