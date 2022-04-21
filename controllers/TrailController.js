@@ -1,5 +1,5 @@
-const { Trail, Post, Comment, State } = require('../models')
-const middleware = require('../middleware')
+const { Trail, Post, User, Comment, State } = require('../models')
+const user = require('../models/user')
 
 
 const GetAllTrailNames = async (req, res) => {
@@ -16,9 +16,11 @@ const GetTrailDetails = async (req, res) => {
   try {
     const trailId = parseInt(req.params.trailId)
     const trail = await Trail.findOne({
-      include: { model: Post, as: 'posts' },
+      include: [{ model: Post, as: 'posts' }, {model: User}],
       where: { id: trailId }
     })
+    console.log(trail);
+    
     return res.status(200).json(trail)
   } catch (error) {
     throw error

@@ -1,15 +1,16 @@
 const { Post, Trail, User } = require('../models')
-const { Op } = require('sequelize')
 
 const GetPostsByTrailId = async (req, res) => {
   try {
     const trailId = parseInt(req.params.trailId)
     const posts = await Post.findAll({
+      attributes: { exclude: ['User.passwordDigest'] },
       include: [{ model: User }],
       where: { trailId: trailId },
+      raw:true,
       order: [['createdAt', 'DESC']]
     })
-    console.log(posts, 'POSTS CONTROLLER')
+    posts.forEach((post) => delete post['User.passwordDigest'] )
     return res.status(200).json(posts)
   } catch (error) {
     throw error
@@ -95,9 +96,11 @@ const GetFolloweingPosts = async (req, res) => {
     })
     const allFollowingId = user.following.map((u) => u.id) //[2,3]
     const posts = await Post.findAll({
+      include: [{model: User}],
       where: {
         userId: [...allFollowingId]
       },
+      raw: true,
       order: [['createdAt', 'DESC']]
     })
     return res.status(200).json(posts)
