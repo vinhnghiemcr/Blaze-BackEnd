@@ -70,7 +70,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        title: 'Forgot my shoes but scenerie was beautiful',
+        title: 'Forgot my shoes but scenery was beautiful',
         content:
           'Green Ridge hosts some of the best campsites around, would have gone for a hike if I had remembered my boots',
         img: 'https://i.imgur.com/908yOqx.png',
