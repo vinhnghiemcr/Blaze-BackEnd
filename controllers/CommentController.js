@@ -8,6 +8,7 @@ const GetCommentsByPostId = async (req, res) => {
       where: { postId: postId },
       raw: true
     })
+    comments.forEach((comment) => delete comment['User.passwordDigest'] )
     return res.status(200).json(comments)
   } catch (error) {
     throw error
