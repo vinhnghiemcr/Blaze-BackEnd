@@ -8,7 +8,7 @@ const GetCommentsByPostId = async (req, res) => {
       where: { postId: postId },
       raw: true
     })
-    console.log(comments, "COMMENTS")
+    console.log(comments, 'COMMENTS')
     return res.status(200).json(comments)
   } catch (error) {
     throw error

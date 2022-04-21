@@ -147,7 +147,7 @@ module.exports = {
       {
         title: 'BEAR ON TRAIL',
         content: 'Watch out spotted a bear on the trail today!',
-        img: 'https://i.imgur.com/LNGr3yq.png',
+        img: 'https://i.imgur.com/LybOIhO.png',
         trail_id: 6,
         user_id: 3,
         createdAt: new Date(),

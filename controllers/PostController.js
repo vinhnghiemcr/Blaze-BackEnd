@@ -5,9 +5,11 @@ const GetPostsByTrailId = async (req, res) => {
   try {
     const trailId = parseInt(req.params.trailId)
     const posts = await Post.findAll({
+      include: [{ model: User }],
       where: { trailId: trailId },
       order: [['createdAt', 'DESC']]
     })
+    console.log(posts, 'POSTS CONTROLLER')
     return res.status(200).json(posts)
   } catch (error) {
     throw error
