@@ -25,7 +25,7 @@ module.exports = {
       {
         email: 'molly@molly.com',
         name: 'Molly',
-        trailName: 'Tree',
+        trailName: 'Crunchy Granola',
         passwordDigest: molly,
         createdAt: new Date(),
         updatedAt: new Date()

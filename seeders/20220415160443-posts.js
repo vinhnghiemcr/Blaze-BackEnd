@@ -43,10 +43,10 @@ module.exports = {
       },
       {
         title: 'First hike in Alabama!',
-        content: 'I never new Alabama had such nature!',
+        content: 'I never knew Alabama had such nature!',
         img: 'https://i.pinimg.com/originals/ed/2b/2b/ed2b2bc5ff71e052c1b0bdc1819b95c7.jpg',
         trail_id: 4,
-        user_id: 1,
+        user_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -112,7 +112,7 @@ module.exports = {
         title: 'Stairs to Heaven',
         content: 'Wonderful spot in Honolulu! Lots of stairs',
         img: 'https://i.imgur.com/DNsUTly.png',
-        trail_id: 8,
+        trail_id: 9,
         user_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -121,16 +121,16 @@ module.exports = {
         title: 'Koko Crater Railway Trailhead',
         content: 'Very steep but fantasically historic!',
         img: 'https://i.imgur.com/bHgdryj.png',
-        trail_id: 7,
+        trail_id: 10,
         user_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        title: 'Koko Crater Railway Trailhead',
+        title: 'Moanalua Valley Trail',
         content: 'One of the best spots to get get photographs in Honolulu',
         img: 'https://i.imgur.com/aFUnwL4.png',
-        trail_id: 8,
+        trail_id: 11,
         user_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -139,7 +139,7 @@ module.exports = {
         title: 'Polallie Trailhead',
         content: 'What a waterfall!',
         img: 'https://i.imgur.com/LNGr3yq.png',
-        trail_id: 8,
+        trail_id: 12,
         user_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -148,7 +148,44 @@ module.exports = {
         title: 'BEAR ON TRAIL',
         content: 'Watch out spotted a bear on the trail today!',
         img: 'https://i.imgur.com/LybOIhO.png',
-        trail_id: 6,
+        trail_id: 5,
+        user_id: 3,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        title: 'Fall Colors in Texas',
+        content: 'One of the best spots to see leaves change colors!',
+        img: 'https://i.imgur.com/f8MOPPk.jpeg',
+        trail_id: 7,
+        user_id: 1,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        title: 'Starry Night',
+        content: "Don't forget to look up",
+        img: 'https://i.imgur.com/Cd6ZvKF.png',
+        trail_id: 2,
+        user_id: 1,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        title: 'Take breaks when you need too!',
+        content: "After a long hike it's good to stop and take a breather",
+        img: 'https://i.imgur.com/1KaPEIA.png',
+        trail_id: 11,
+        user_id: 1,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        title: 'Does Cross Country Sking Count as Hiking?',
+        content:
+          'The girls were champs as we cross country skied our way up the trail',
+        img: 'https://i.imgur.com/sdzXf28.png',
+        trail_id: 17,
         user_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
