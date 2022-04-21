@@ -4,26 +4,28 @@ const GetPostsByTrailId = async (req, res) => {
   try {
     const trailId = parseInt(req.params.trailId)
     const posts = await Post.findAll({
-      attributes: { exclude: ['User.passwordDigest'] },
       include: [{ model: User }],
       where: { trailId: trailId },
       raw:true,
       order: [['createdAt', 'DESC']]
     })
     posts.forEach((post) => delete post['User.passwordDigest'] )
+    console.log(posts, "POSTS")
     return res.status(200).json(posts)
   } catch (error) {
     throw error
   }
 }
-
 const GetPostsByUserId = async (req, res) => {
   try {
     const userId = parseInt(req.params.userId)
     const posts = await Post.findAll({
+      include: [{ model: User }],
       where: { userId: userId },
+      raw:true,
       order: [['createdAt', 'DESC']]
     })
+    posts.forEach((post) => delete post['User.passwordDigest'] )
     return res.status(200).json(posts)
   } catch (error) {
     throw error
@@ -87,7 +89,7 @@ const DeletePost = async (req, res) => {
   }
 }
 
-const GetFolloweingPosts = async (req, res) => {
+const GetFollowingPosts = async (req, res) => {
   try {
     const userId = parseInt(req.params.userId)
     const user = await User.findOne({
@@ -103,6 +105,7 @@ const GetFolloweingPosts = async (req, res) => {
       raw: true,
       order: [['createdAt', 'DESC']]
     })
+    posts.forEach((post) => delete post['User.passwordDigest'] )
     return res.status(200).json(posts)
   } catch (error) {
     throw error
@@ -115,5 +118,5 @@ module.exports = {
   CreatePost,
   UpdatePost,
   DeletePost,
-  GetFolloweingPosts
+  GetFollowingPosts
 }

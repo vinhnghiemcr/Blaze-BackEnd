@@ -32,6 +32,6 @@ router.get(
   '/following/:userId',
   middleware.stripToken,
   middleware.verifyToken,
-  controller.GetFolloweingPosts
+  controller.GetFollowingPosts
 )
 module.exports = router
