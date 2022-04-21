@@ -61,6 +61,7 @@ const UpdateProfile = async (req, res) => {
       if (newTrailName) {
         await user.update({ trailName: newTrailName })
       }
+      await user.save()
       return res.send({ status: 'Ok', payload: user })
     }
     res.status(401).send({ status: 'Error', msg: 'Unauthorized' })
