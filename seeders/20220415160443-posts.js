@@ -172,7 +172,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        title: 'Take breaks when you need too!',
+        title: 'Take breaks when you need to!',
         content: "After a long hike it's good to stop and take a breather",
         img: 'https://i.imgur.com/1KaPEIA.png',
         trail_id: 11,
