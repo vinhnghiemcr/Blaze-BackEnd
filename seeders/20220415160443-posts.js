@@ -189,6 +189,33 @@ module.exports = {
         user_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
+      },
+      {
+        title: 'Great Spot to Hike!',
+        content: 'I visited this trail and had an absolute blast',
+        img: 'https://cdn.wallpapersafari.com/43/6/OY5NKh.jpg',
+        trail_id: 7,
+        user_id: 4,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        title: 'What a View!',
+        content: 'I visited this trail and had an absolute blast',
+        img: 'https://cdn-assets.alltrails.com/uploads/photo/image/30661966/extra_large_5a2b2a38c78f017081db99b684faf64d.jpg',
+        trail_id: 3,
+        user_id: 6,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        title: 'Wowza',
+        content: 'There are a lot of stairs',
+        img: 'https://s3-us-west-2.amazonaws.com/media-tentree-com/wp-content/uploads/2015/04/download-1.png',
+        trail_id: 10,
+        user_id: 4,
+        createdAt: new Date(),
+        updatedAt: new Date()
       }
     ])
   },
