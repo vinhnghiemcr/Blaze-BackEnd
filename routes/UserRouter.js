@@ -10,6 +10,11 @@ router.put(
   middleware.verifyToken,
   controller.UpdateProfile
 )
+router.get('/:userId/friendList', 
+  middleware.stripToken,
+  middleware.verifyToken,
+  controller.GetAllFollowers
+)
 router.get(
   '/session',
   middleware.stripToken,
@@ -21,6 +26,20 @@ router.delete(
   middleware.stripToken,
   middleware.verifyToken,
   controller.DeleteUser
+)
+
+//following an user
+router.get(`/:userId/following/:followingId`,
+  middleware.stripToken,
+  middleware.verifyToken,
+  controller.FollowingAnUser
+)
+
+//following an user
+router.delete(`/:userId/following/:followingId`,
+  middleware.stripToken,
+  middleware.verifyToken,
+  controller.UnfollowingAnUser
 )
 
 module.exports = router

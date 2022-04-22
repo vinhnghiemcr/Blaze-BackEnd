@@ -1,4 +1,4 @@
-const { User } = require('../models')
+const { User, UserFollower } = require('../models')
 const middleware = require('../middleware')
 
 const Login = async (req, res) => {
@@ -91,6 +91,79 @@ const DeleteUser = async (req, res) => {
   } catch (error) {}
 }
 
+  const FollowingAnUser = async (req, res) => {
+    try {
+      const userId = parseInt(req.params.userId)
+      const followingId = parseInt(req.params.followingId)
+      const follower = await UserFollower.create({ 
+        user_id: userId,
+        follower_id: followingId,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      })
+    
+      const followingList = await User.findAll({
+        include: [{ model: User, as: 'followers', through: { attributes: [] } }],
+        raw: true,
+        where: { id: userId }
+      })
+      followingList.forEach((user) => {
+        delete user.passwordDigest
+        delete user['followers.passwordDigest']
+       } )
+      res.status(200).json(followingList)
+      return 
+    } catch (error) {
+      throw error
+    }
+  }
+
+  const UnfollowingAnUser = async (req, res) => {
+    try {
+      const userId = parseInt(req.params.userId)
+      const followingId = parseInt(req.params.followingId)
+      const follower = await UserFollower.findOne({ 
+        where: {
+          user_id: userId,
+          follower_id: followingId,
+        }
+      })
+      if(follower) {await follower.destroy()}
+    
+      const followingList = await User.findAll({
+        include: [{ model: User, as: 'followers', through: { attributes: [] } }],
+        raw: true,
+        where: { id: userId }
+      })
+      followingList.forEach((user) => {
+        delete user.passwordDigest
+        delete user['followers.passwordDigest']
+       } )
+      res.status(200).json(followingList)
+      return 
+    } catch (error) {
+      throw error
+    }
+  }
+
+  const GetAllFollowers = async (req, res) => {
+    try {
+      const userId = parseInt(req.params.userId)
+      const followingList = await User.findAll({
+        include: [{ model: User, as: 'followers', through: { attributes: [] } }],
+        raw: true,
+        where: { id: userId }
+      })
+      followingList.forEach((user) => {
+        delete user.passwordDigest
+        delete user['followers.passwordDigest']
+       } )
+      res.status(200).json(followingList)
+    } catch (error) {
+      throw error
+    }
+  }
+
 const CheckSession = async (req, res) => {
   const { payload } = res.locals
   res.send(payload)
@@ -101,5 +174,8 @@ module.exports = {
   Register,
   UpdateProfile,
   CheckSession,
-  DeleteUser
+  DeleteUser,
+  FollowingAnUser,
+  UnfollowingAnUser,
+  GetAllFollowers
 }

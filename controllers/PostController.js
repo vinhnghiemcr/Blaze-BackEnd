@@ -93,10 +93,10 @@ const GetFollowingPosts = async (req, res) => {
   try {
     const userId = parseInt(req.params.userId)
     const user = await User.findOne({
-      include: [{ model: User, as: 'following', through: { attributes: [] } }],
+      include: [{ model: User, as: 'followers', through: { attributes: [] } }],
       where: { id: userId }
     })
-    const allFollowingId = user.following.map((u) => u.id) //[2,3]
+    const allFollowingId = user.followers.map((u) => u.id) //[2,3]
     const posts = await Post.findAll({
       include: [{model: User}],
       where: {
@@ -106,6 +106,7 @@ const GetFollowingPosts = async (req, res) => {
       order: [['createdAt', 'DESC']]
     })
     posts.forEach((post) => delete post['User.passwordDigest'] )
+    console.log(posts, "Followers POSTs")
     return res.status(200).json(posts)
   } catch (error) {
     throw error
